@@ -1,17 +1,15 @@
 {
-        "name": "Motorcycle Registry",
-        "summary": "Manage Registration of Motorcycles",
-        "description": """
-        Motorcycle Registry
+    'name': 'Motorcycle Registry',
+    'version': '0.0.1',
+    'author': 'Andres Racines',
+    'sequence': -100,
+    'category': 'Kawiil/Custom Module',
+    'summary': 'Manage Registration of Motorcycles',
+    'description': """ Motorcycle Registry
         ======================
-        This Module is used to keep track of the Motorcycle Registration and Ownership of each motorcycled of the brand
-        """,
-        "author": "RacinesAndres",
-        "version": "0.0.1",
-        "license": "OPL-1",
-        "website": "https://github.com/RacinesAndres/kawiil-odoo-academy",
-        "depends": [],
-        "data": [],
-        "demo": [],
-        "application": True,     
+        This Module is used to keep track of the Motorcycle Registration and Ownership of each motorcycled of the brand""",
+    'license': 'AGPL-3',
+    'application': True,
+    'auto_install': False,
+    # 'images': ['static/description/banner.jpg'],
 }
