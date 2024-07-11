@@ -10,7 +10,8 @@
         "version": "0.0.1",
         "license": "OPL-1",
         "website": "https://github.com/RacinesAndres/kawiil-odoo-academy",
-        "depends": ["base"],
+        "depends": [],
         "data": [],
-        "aplication": True,     
+        "demo": [],
+        "application": True,     
 }
