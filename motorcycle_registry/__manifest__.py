@@ -1,4 +1,4 @@
-    {
+{
         "name": "Motorcycle Registry",
         "summary": "Manage Registration of Motorcycles",
         "description": """
@@ -13,5 +13,4 @@
         "depends": ["base"],
         "data": [],
         "aplication": True,     
-        
-    }
+}
