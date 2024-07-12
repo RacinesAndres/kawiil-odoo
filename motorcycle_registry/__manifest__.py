@@ -11,7 +11,7 @@
     'license': 'OPL-1',
     'depensds': ['base'],
     'data': [],
-    'demo': [],
+    'demo': ['demo/motorcycle_registry_demo.xml'],
     'application': True,
     'auto_install': False,
     'website': 'https://github.com/RacinesAndres/kawiil-odoo-academy/tree/17.0-motorcycle-registry',
