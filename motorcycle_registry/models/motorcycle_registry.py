@@ -7,9 +7,9 @@ class MotorcycleRegistry(models.Model):
 
     certificate_title = fields.Binary(string = "Titulo de propiedad")
     current_mileage = fields.Float(string = "Millaje actual")
-    first_name = fields.Char(string = "Nombre", required = True)
-    last_name = fields.Char(string = "Apellido", required = True)
+    first_name = fields.Char(string = "Nombre")
+    last_name = fields.Char(string = "Apellido")
     license_plate = fields.Char(string = "Matrícula")
     registry_date = fields.Date(string = "Fecha de registro")
-    registry_number = fields.Char(string = "Nombre de Registro", required = True)
+    registry_number = fields.Char(string = "Nombre de Registro")
     active = fields.Boolean(string = "Activo", default = True)
