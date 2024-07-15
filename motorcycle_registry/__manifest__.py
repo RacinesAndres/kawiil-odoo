@@ -10,7 +10,12 @@
         the brand""",
     'license': 'OPL-1',
     'depensds': ['base'],
-    'data': [],
+    'data': [
+        'security/motorcycle_registry_groups.xml',
+        'security/ir.model.access.csv',
+        'security/motorcycle_registry.xml',
+        'views/motorcycle_registry_menuitems.xml',
+    ],
     'demo': ['demo/motorcycle_registry_demo.xml'],
     'application': True,
     'auto_install': False,
