@@ -15,6 +15,7 @@
         'security/ir.model.access.csv',
         'security/motorcycle_registry.xml',
         'views/motorcycle_registry_menuitems.xml',
+        'views/motorcycle_registry.xml',
     ],
     'demo': ['demo/motorcycle_registry_demo.xml'],
     'application': True,
