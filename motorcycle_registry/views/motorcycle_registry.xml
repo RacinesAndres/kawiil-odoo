@@ -25,12 +25,11 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Certificate Title">
+                        <page string="Related Documents">
                             <button name="action_test" string="Subir Archivo" type="object"
                                 class="oe_highlight" />
                         </page>
                     </notebook>
-
                 </sheet>
             </form>
         </field>
