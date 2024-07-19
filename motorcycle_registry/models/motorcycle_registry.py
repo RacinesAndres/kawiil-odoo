@@ -1,6 +1,7 @@
+import re
+
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
-import re
 
 class MotorcycleRegistry(models.Model):
     _name = "motorcycle.registry"
@@ -16,14 +17,13 @@ class MotorcycleRegistry(models.Model):
     last_name = fields.Char(string = "Apellido")
     license_plate = fields.Char(string = "Matrícula")
     registry_date = fields.Date(string = "Fecha de registro")
-    registry_number = fields.Char(string = "Numero de Registro", default="MRN0004", required=True, copy=False, readonly=True)
+    registry_number = fields.Char(string = "Numero de Registro", required=True, copy=False, readonly=True,  default=lambda self:self.env['ir.sequence'].next_by_code('registry.number'))
     active = fields.Boolean(string = "Activo", default = True)
     
     make = fields.Char(string="Marca")
     model = fields.Char(string ="Modelo")
-    year = fields.Integer(string ="Año")
+    year = fields.Char(string ="Año")
     battery_capacity = fields.Char(string ="Capacidad de Bateria")
-    
     
     @api.model_create_multi
     def create(self, vals_list):
@@ -31,7 +31,7 @@ class MotorcycleRegistry(models.Model):
             if vals.get('registry_number', ('MRN0000')) == ('MRN0000'):
                 vals['registry_number'] = self.env['ir.sequence'].next_by_code('registry.number')
         return super().create(vals_list)
-        
+
     @api.constrains('license_plate')
     def _comprobar_matricula(self):
         for record in self:
@@ -53,3 +53,4 @@ class MotorcycleRegistry(models.Model):
                 "type": "rainbow_man",
             }
         }
+        

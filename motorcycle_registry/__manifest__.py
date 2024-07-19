@@ -14,6 +14,7 @@
         'security/motorcycle_registry_groups.xml',
         'security/ir.model.access.csv',
         'security/motorcycle_registry.xml',
+        'data/registry_number_sequence.xml',
         'views/motorcycle_registry_menuitems.xml',
         'views/motorcycle_registry.xml',
     ],
