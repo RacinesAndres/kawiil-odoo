@@ -19,11 +19,13 @@ class MotorcycleRegistry(models.Model):
     registry_date = fields.Date(string = "Fecha de registro")
     registry_number = fields.Char(string = "Numero de Registro", required=True, copy=False, readonly=True,  default=lambda self:self.env['ir.sequence'].next_by_code('registry.number'))
     active = fields.Boolean(string = "Activo", default = True)
-    
+
+    #Nuevo campos
     make = fields.Char(string="Marca")
     model = fields.Char(string ="Modelo")
     year = fields.Char(string ="Año")
     battery_capacity = fields.Char(string ="Capacidad de Bateria")
+    serial_number = fields.Char(string = "Numero de serie")
     
     @api.model_create_multi
     def create(self, vals_list):
@@ -34,15 +36,17 @@ class MotorcycleRegistry(models.Model):
 
     @api.constrains('license_plate')
     def _comprobar_matricula(self):
-        for record in self:
-            match = re.match('^[A-Z]{1,3}{1,4}[A-Z]{0,2}$', record.license_plate)
-            if match == None:
+        pattern = r'^[A-Z]{1,3}\d{1,4}[A-Z]{0,2}$'
+        for record in self.filtered(lambda r: r.license_plate):
+            match = re.match(pattern, record.license_plate)
+            if not match:
                 raise ValidationError('La matricula NO cumple con la secuencia valida.')
 
     @api.constrains('vin')
     def _comprobar_vin(self):
-            match = re.match('^[A-Z]{4}{2}[A-Z0-9]{2}{5}$', self.vin)
-            if match == None:
+            pattern = r'^[A-Z]{4}\d{2}[A-Z0-9]{2}\d{5}$'
+            match = re.match(pattern, self.vin)
+            if not match:
                 raise ValidationError('El vin NO se cumple con la secuencia valida.')
 
     def action_test(self):
