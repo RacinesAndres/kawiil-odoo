@@ -3,16 +3,19 @@
    <data noupdate="1">
       <record id="registry_01" model="motorcycle.registry">
          <field name="registry_number">MRN0001</field>
+         <!-- <field name="vin">KAIN220M00001</field> -->
          <field name="current_mileage">250</field>
-        <field name="registry_date">2023-01-28</field>
+         <field name="registry_date">2023-01-28</field>
       </record>
       <record id="registry_02" model="motorcycle.registry">
          <field name="registry_number">MRN0002</field>
+         <!-- <field name="vin">KAIN220M00002</field> -->
          <field name="current_mileage">5250</field>
          <field name="registry_date">2023-01-27</field>
       </record>
       <record id="registry_03" model="motorcycle.registry">
-        <field name="registry_number">MRN0003</field>
+         <field name="registry_number">MRN0003</field>
+         <!-- <field name="vin">KAIN220M00003</field> -->
          <field name="current_mileage">23250</field>
          <field name="registry_date" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')" />
       </record>
