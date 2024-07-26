@@ -4,6 +4,7 @@
       <record id="registry_01" model="motorcycle.registry">
          <field name="registry_number">MRN0001</field>
          <!-- <field name="vin">KAIN220M00001</field> -->
+         <!-- <field name="license_plate">KJS123</field> -->
          <field name="current_mileage">250</field>
          <field name="registry_date">2023-01-28</field>
       </record>
