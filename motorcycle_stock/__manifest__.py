@@ -8,7 +8,7 @@
     'depends': ['stock'],
     'data': [],
     'demo':[],
-    # 'data': ['views/procuct_template_view.xml'],
+    'data': ['views/procuct_template_view.xml'],
     # 'demo': ['demo/product_demo.xml'],
     'application': True,
     'website': 'https://github.com/RacinesAndres',
