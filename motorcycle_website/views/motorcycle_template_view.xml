@@ -8,10 +8,10 @@
                     <h1>Motorcycle Comparison</h1>
                     <div class="d-flex p-2 bd-highlight">
                         <div class="card">
-                            <div class="card_body">
+                            <div class="card-body">
                                 <h5 class="card_title">Specs</h5>
                                 <ul class="list-group">
-                                    <!-- <li class="list-group-item">Image:</li> -->
+                                    <li class="list-group-item" style="height: 118px;">Image:</li>
                                     <li class="list-group-item">Launch Date:</li>
                                     <li class="list-group-item">Range:</li>
                                     <li class="list-group-item">Horsepower:</li>
@@ -28,7 +28,15 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><t t-out="product.model"/></h5>
                                     <ul class="list-group">
-                                    <!-- <li class="list-group-item"><img t-if="product.image_1920" t-att-src="image_data_uri(product.image_128)" alt="motorcycle image"/></li> -->
+                                    <t t-if="not product.image_1920">
+                                        <li class="list-group-item">
+                                            <img src="https://thumbs.dreamstime.com/b/no-parking-scooter-rohibited-sign-retro-moped-forbidden-modern-round-sticker-vector-illustration-prohibited-277232062.jpg" alt="Imagen por URL" style="width: 100px; height: 100px;" />
+                                        </li>
+                                    </t>
+                                    <t t-else="product.image_1920">
+                                       <li class="list-group-item"><img t-att-src="image_data_uri(product.image_128)" alt="motorcycle image" style="width: 100px; height: 100px;" />
+                                       </li>
+                                    </t>
                                     <li class="list-group-item"><t t-out="product.launch_date"/></li>
                                     <li class="list-group-item"><t t-out="product.range"/></li>
                                     <li class="list-group-item"><t t-out="product.horsepower"/></li>
